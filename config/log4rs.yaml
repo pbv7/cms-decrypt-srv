@@ -1,0 +1,35 @@
+# Scan this file for changes every 3600 seconds
+refresh_rate: 300 seconds
+
+appenders:
+  # An appender named "stdout" that writes to stdout
+  stdout:
+    kind: console
+
+  # An appender named "application" that writes to a file with a custom pattern encoder
+  application:
+    kind: file
+    path: "log/application.log"
+    encoder:
+      pattern: "{d} {l} {t} - {m}{n}"
+
+# Set the default logging level to "info" and attach the "stdout" appender to the root
+root:
+  level: info
+  appenders:
+    - stdout
+    - application
+
+loggers:
+  # Raise the maximum log level for events sent to the "app::backend::db" logger to "info"
+  app::backend::db:
+    level: info
+
+  # Route log events sent to the "app::application" logger to the "application" appender,
+  # and *not* the normal appenders installed at the root
+  app::application:
+    level: info
+    appenders:
+      - application
+    additive: false
+

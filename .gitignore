@@ -1,0 +1,8 @@
+/target
+**/*.rs.bk
+Cargo.lock
+/decrypted/*
+/inbox/*
+/log/*
+/config/*
+!/config/log4rs.yaml
