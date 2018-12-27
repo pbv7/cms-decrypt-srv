@@ -7,14 +7,19 @@ extern crate openssl;
 extern crate openssl_probe;
 
 use notify::{DebouncedEvent, RecommendedWatcher, RecursiveMode, Watcher};
-use openssl::{cms::CmsContentInfo, error::ErrorStack, pkey::{PKey, Private}, x509::X509};
+use openssl::{
+    cms::CmsContentInfo,
+    error::ErrorStack,
+    pkey::{PKey, Private},
+    x509::X509,
+};
 use std::ffi::OsStr;
+use std::fs::{self, File};
+use std::io::{self, prelude::*};
 use std::ops::Deref;
 use std::panic;
-use std::sync::mpsc::channel;
-use std::fs::{self, File};
 use std::path::{Path, PathBuf};
-use std::io::{self, prelude::*};
+use std::sync::mpsc::channel;
 use std::time::Duration;
 
 const LOGGING_SETTINGS_FILE: &str = "config/log4rs.yaml";
