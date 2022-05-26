@@ -1,7 +1,7 @@
 [package]
 name = "cms-decrypt-srv"
 version = "0.2.0"
-authors = ["Bogdan Potishuk <dragon@noctilucence.io>"]
+authors = ["Bohdan Potishuk <dragon@noctilucence.io>"]
 edition = "2021"
 
 [dependencies]
