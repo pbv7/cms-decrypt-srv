@@ -1,13 +1,13 @@
 [package]
-name = "ec_forms"
-version = "0.1.0"
+name = "ec-forms"
+version = "0.2.0"
 authors = ["Bogdan Potishuk <bogdan@atollholding.com.ua>"]
-edition = "2018"
+edition = "2021"
 
 [dependencies]
-notify = "4.0.6"
-log = "0.4.6"
-log4rs = "0.8.1"
-openssl-probe = "0.1.2"
-openssl = { version = "0.10.15", feature = ["vendored"] }
-base64 = "0.10.0"
+notify = "4.0.17"
+log = "0.4.17"
+log4rs = "1.1.1"
+openssl-probe = "0.1.5"
+openssl = { version = "0.10.40", feature = ["vendored"] }
+base64 = "0.13.0"
